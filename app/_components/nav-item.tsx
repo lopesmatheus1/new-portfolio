@@ -9,7 +9,11 @@ interface NavItemProps {
 const NavItem = ({ href, label }: NavItemProps) => {
   const pathname = usePathname();
   return (
-    <Link href={href} key={label}>
+    <Link
+      className="transition ease-in-out hover:text-primary/40"
+      href={href}
+      key={label}
+    >
       <span className={`${pathname === href ? "text-primary" : ""}`}>
         {label}
       </span>
