@@ -11,8 +11,8 @@ const Header = () => {
 
   return (
     <div className="relative top-0 flex h-32 w-full items-center justify-center">
-      <div className="flex space-x-10 rounded-lg bg-secondary p-4">
-        <nav className="space-x-10">
+      <div className="flex gap-6 rounded-lg bg-secondary p-4">
+        <nav className="flex flex-col space-x-2 sm:flex-row sm:space-x-6">
           {NAV_ITEMS.map((navItem) => (
             <NavItem {...navItem} />
           ))}
