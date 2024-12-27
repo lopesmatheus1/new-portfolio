@@ -1,16 +1,20 @@
 import { Button } from "./ui/button";
 import Image from "next/image";
-import developer from "../public/developer.png";
+import developer from "/public/developer.png";
 import Link from "next/link";
 
 const Hero = () => {
   return (
     <section className="mt-40 flex h-[650px] w-full flex-col-reverse items-center justify-evenly gap-14 md:mt-0 lg:flex-row">
       <div className="container max-w-[310px] space-y-5 md:max-w-[500px]">
-        <h1 className="text-4xl text-primary">Olá, meu nome é Matheus</h1>
+        <h1 className="text-4xl font-semibold text-primary">
+          Olá, meu nome é Matheus
+        </h1>
         <p className="leading-loose">
-          During these <span className="text-lg text-primary"> 4 years</span> as{" "}
-          <span className="text-lg text-primary">
+          During these{" "}
+          <span className="text-lg font-semibold text-primary"> 4 years</span>{" "}
+          as{" "}
+          <span className="text-lg font-semibold text-primary">
             Front-End Software Engineer
           </span>
           . My role has extended beyond coding to effective communication with
