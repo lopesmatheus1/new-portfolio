@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+.container {
+  @apply mx-auto w-full max-w-[1350px] px-12;
 }
 
 @layer base {
@@ -64,6 +63,6 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground ;
+    @apply bg-background text-foreground;
   }
 }

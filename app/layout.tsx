@@ -5,7 +5,7 @@ import { ThemeProvider } from "./_components/theme-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["100", "200", "400", "300", "600", "700", "900", "800", "500"],
 });
 
 export default function RootLayout({
