@@ -1,4 +1,4 @@
-import TechCard from "@/app/_components/tech-card";
+import TechCard from "../../_components/tech-card";
 
 const Techs = () => {
   return (
