@@ -2,7 +2,7 @@ import TechCard from "../../_components/tech-card";
 
 const Techs = () => {
   return (
-    <section className="container h-[600px]">
+    <section className="container">
       <div className="mt-24 space-y-28 text-center lg:mt-0 lg:text-left">
         <h1 className="text-4xl font-extralight lg:text-5xl">
           These are the <br />
