@@ -4,6 +4,7 @@ import { Button } from "../_components/ui/button";
 const Experience = () => {
   const data = {
     title: "Front-end Software Engineer",
+    locale: "Nova Friburgo, RJ - Brasil",
     employmentType: "Contract",
     startDate: "July 2023",
     endDate: "Present",

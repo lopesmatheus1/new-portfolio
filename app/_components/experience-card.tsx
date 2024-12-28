@@ -4,6 +4,7 @@ import { Circle } from "lucide-react";
 type ExperienceCardProps = {
   experience: {
     title: string;
+    locale: string;
     employmentType: string;
     startDate: string;
     endDate: string;
@@ -24,7 +25,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
               <span className="font-light text-primary/80">
                 {experience.employmentType}
               </span>
-              <div className="flex items-center justify-start gap-2 font-extralight">
+              <div className="flex items-center justify-start gap-2 text-sm font-extralight">
                 <p>{experience.startDate}</p>
                 <Circle
                   className="fill-current text-primary/50 transition ease-in-out hover:text-primary"
@@ -32,7 +33,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
                 />
                 <p>{experience.endDate}</p>
               </div>
-              <p></p>
+              <p className="text-sm font-extralight">{experience.locale}</p>
             </div>
 
             {/* PARTE DA DIREITA */}
