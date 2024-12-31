@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
-const ProjectCard = () => {
+const ProjectCard = async () => {
   return (
     <div>
       <Card className="w-full bg-transparent transition-all ease-in-out hover:scale-[1.01] hover:bg-card/20 lg:max-w-[500px]">

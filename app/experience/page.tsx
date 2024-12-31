@@ -1,19 +1,29 @@
 import ExperienceCards from "../_components/experience-card";
 import { Button } from "../_components/ui/button";
+import { ExperiencesResponse } from "../_types/page-experience";
+import { fetchHygraphQuery } from "../_utils/fetch-hygraph-query";
 
-const Experience = () => {
-  const data = {
-    title: "Front-end Software Engineer",
-    locale: "Nova Friburgo, RJ - Brasil",
-    employmentType: "Contract",
-    startDate: "July 2023",
-    endDate: "Present",
-    companyName: "Company Name",
-    description: [
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    ],
-  };
+const getExperiencePageData = async (): Promise<ExperiencesResponse> => {
+  const getExperiencesQuery = `query getExperiences {
+  experiences {
+    companyName
+    contractType
+    description
+    endDate
+    startDate
+    title
+    experience
+    location
+  }
+}`;
+
+  return fetchHygraphQuery(getExperiencesQuery);
+};
+
+const Experience = async () => {
+  const { experiences }: ExperiencesResponse = await getExperiencePageData();
+  console.log(experiences)
+
   return (
     <section className="container">
       <div className="flex min-h-[320px] w-full flex-col items-center justify-center gap-10 sm:h-[350px]">
@@ -30,9 +40,8 @@ const Experience = () => {
         <Button variant="outline">Download CV</Button>
       </div>
 
-      <div className="space-y-8 pb-6">
-        <ExperienceCards experience={data} />
-        <ExperienceCards experience={data} />
+      <div >
+        <ExperienceCards experiences={experiences} />
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ const TechCard = () => {
   return (
     <Card className="w-full bg-transparent lg:max-w-[280px]">
       <CardHeader>
-        <CardTitle className="font-light text-xl">Front-end Engineer</CardTitle>
+        <CardTitle className="text-xl font-light">Front-end Engineer</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="flex items-center justify-center gap-5 lg:justify-start">
