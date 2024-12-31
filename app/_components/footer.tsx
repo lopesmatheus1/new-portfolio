@@ -23,24 +23,26 @@ const Footer = () => {
   return (
     <section className="container mt-10">
       <div className="flex min-h-[250px] flex-col justify-evenly">
-        <div className="flex w-full items-center justify-between">
-          <h2 className="text-4xl font-extralight lg:text-5xl">
+        {/* CIMA */}
+        <div className="flex w-full flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
+          <h2 className="text-2xl font-extralight lg:text-4xl">
             Vamos <br /> trabalhar juntos
           </h2>
 
-          <Button variant="outline">
+          <Button variant="outline" asChild>
             <Link
-              className="flex items-center justify-center gap-2 font-light"
+              className="flex items-center justify-center gap-2 text-xs font-light"
               href="mailto:matheusmarendino022@gmail.com"
             >
               <BiLogoGmail />
-              matheusmarendino022@gmail.com
+              <p>matheusmarendino022@gmail.com</p>
             </Link>
           </Button>
         </div>
 
         <hr />
 
+        {/* BAIXO */}
         <div className="flex justify-between">
           <p className="text-xs font-light">
             © 2025 Todos os direitos reservados.
