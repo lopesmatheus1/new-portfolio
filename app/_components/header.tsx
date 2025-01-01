@@ -9,7 +9,7 @@ import NavLink from "./nav-link";
 const Header = () => {
   const NAV_ITEMS = [
     { label: "<matheuslopes />", href: "/" },
-    { label: "Formações", href: "/education" },
+    { label: "Formações", href: "/formation" },
     { label: "Experiência", href: "/experience" },
   ];
   const NAV_LINKS = [

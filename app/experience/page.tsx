@@ -22,7 +22,6 @@ const getExperiencePageData = async (): Promise<ExperiencesResponse> => {
 
 const Experience = async () => {
   const { experiences }: ExperiencesResponse = await getExperiencePageData();
-  console.log(experiences)
 
   return (
     <section className="container">

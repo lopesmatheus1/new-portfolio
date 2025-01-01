@@ -14,7 +14,7 @@
 @layer base {
   :root {
     --background: 264 10% 5%;
-    --foreground: 267 0% 90%;
+    --foreground: 267 0% 75%;
     --card: 267 0% 8%;
     --card-foreground: 267 0% 90%;
     --popover: 267 10% 5%;
@@ -36,7 +36,7 @@
   }
   .light {
     --background: 264 0% 95%;
-    --foreground: 267 0% 8%;
+    --foreground: 267 0% 15%;
     --card: 267 0% 90%;
     --card-foreground: 267 0% 10%;
     --popover: 267 0% 95%;
@@ -64,5 +64,9 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  p {
+    @apply text-foreground;
   }
 }
