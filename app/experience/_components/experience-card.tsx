@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/app/_components/ui/card";
 import { Experience } from "@/app/_types/page-experience";
-
+import { formateDate } from "@/app/_utils/formate-date";
 import { Circle } from "lucide-react";
 
 type ExperienceCardProps = {
@@ -21,20 +21,16 @@ const ExperienceCard = ({ experiences }: ExperienceCardProps) => {
                   {experience.contractType}
                 </span>
                 <div className="flex items-center justify-start gap-2 text-sm">
-                  <p>
-                    {new Date(experience.startDate).toLocaleDateString(
-                      "pt-BR",
-                      {
-                        month: "long",
-                        year: "numeric",
-                      },
-                    )}
-                  </p>
+                  <p>{formateDate(experience.startDate)}</p>
                   <Circle
                     className="fill-current text-primary/50 transition ease-in-out hover:text-primary"
                     size={10}
                   />
-                  <p>Presente</p>
+                  <p>
+                    {experience.title === "Diretor comercial"
+                      ? `${formateDate(experience.endDate)}`
+                      : "Presente"}
+                  </p>
                 </div>
                 <p className="text-sm">{experience.location}</p>
               </div>

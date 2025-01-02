@@ -8,6 +8,7 @@ import {
   CardTitle,
   CardContent,
 } from "@/app/_components/ui/card";
+import { formateDate } from "@/app/_utils/formate-date";
 
 type FormationCardProps = {
   formations: Formation[];
@@ -30,22 +31,12 @@ const FormationCard = ({ formations }: FormationCardProps) => {
                   {formation.certificateDescription}
                 </p>
                 <div className="flex items-center justify-center gap-2 text-sm sm:justify-start">
-                  <p>
-                    {new Date(formation.startDate).toLocaleDateString("pt-BR", {
-                      month: "long",
-                      year: "numeric",
-                    })}
-                  </p>
+                  <p>{formateDate(formation.startDate)}</p>
                   <Circle
                     className="fill-current text-primary/50 transition ease-in-out hover:text-primary"
                     size={10}
                   />
-                  <p>
-                    {new Date(formation.endDate).toLocaleDateString("pt-BR", {
-                      month: "long",
-                      year: "numeric",
-                    })}
-                  </p>
+                  <p>{formateDate(formation.endDate)}</p>
                 </div>
               </div>
 
