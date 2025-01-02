@@ -1,8 +1,8 @@
-import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
-import { Badge } from "./ui/badge";
+import { Badge } from "@/app/_components/ui/badge";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import { Button } from "@/app/_components/ui/button";
 import Link from "next/link";
+import { Card, CardContent, CardHeader, CardTitle } from "@/app/_components/ui/card";
 
 const ProjectCard = async () => {
   return (

@@ -1,4 +1,4 @@
-import FormationCard from "../_components/formation-card";
+import FormationCard from "./_components/formation-card";
 import { FormationResponse } from "../_types/page-formation";
 import { fetchHygraphQuery } from "../_utils/fetch-hygraph-query";
 

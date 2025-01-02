@@ -1,7 +1,7 @@
-import ExperienceCards from "../_components/experience-card";
 import { Button } from "../_components/ui/button";
 import { ExperiencesResponse } from "../_types/page-experience";
 import { fetchHygraphQuery } from "../_utils/fetch-hygraph-query";
+import ExperienceCard from "./_components/experience-card";
 
 const getExperiencePageData = async (): Promise<ExperiencesResponse> => {
   const getExperiencesQuery = `query getExperiences {
@@ -39,8 +39,8 @@ const Experience = async () => {
         <Button variant="outline">Download CV</Button>
       </div>
 
-      <div >
-        <ExperienceCards experiences={experiences} />
+      <div>
+        <ExperienceCard experiences={experiences} />
       </div>
     </section>
   );

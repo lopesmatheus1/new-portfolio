@@ -1,4 +1,4 @@
-import TechCard from "../../_components/tech-card";
+import TechCard from "./tech-card";
 
 const Techs = () => {
   return (
@@ -9,7 +9,7 @@ const Techs = () => {
           technologies I’ve been using
         </h1>
 
-        <div className="grid sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6">
+        <div className="grid gap-6 sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
           <TechCard />
           <TechCard />
           <TechCard />

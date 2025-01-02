@@ -1,6 +1,6 @@
-import { Experience } from "../_types/page-experience";
+import { Card, CardContent } from "@/app/_components/ui/card";
+import { Experience } from "@/app/_types/page-experience";
 
-import { Card, CardContent } from "./ui/card";
 import { Circle } from "lucide-react";
 
 type ExperienceCardProps = {

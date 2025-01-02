@@ -1,8 +1,13 @@
 import { Circle } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
-import { Formation } from "../_types/page-formation";
-import { Button } from "./ui/button";
+import { Formation } from "@/app/_types/page-formation";
+import { Button } from "@/app/_components/ui/button";
 import Link from "next/link";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from "@/app/_components/ui/card";
 
 type FormationCardProps = {
   formations: Formation[];

@@ -1,10 +1,9 @@
 import {
   Card,
-  CardContent,
   CardHeader,
   CardTitle,
-} from "../_components/ui/card";
-
+  CardContent,
+} from "@/app/_components/ui/card";
 import { RiReactjsFill } from "react-icons/ri";
 
 const TechCard = () => {
