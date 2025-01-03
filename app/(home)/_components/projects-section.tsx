@@ -30,7 +30,7 @@ const Projects = async () => {
           Alguns dos meus projetos
         </h1>
 
-        <div className="grid gap-6 sm:grid-cols-[repeat(auto-fit,minmax(400px,1fr))]">
+        <div >
           <ProjectCard projects={projects} />
         </div>
       </div>

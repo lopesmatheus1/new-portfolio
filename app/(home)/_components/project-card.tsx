@@ -16,7 +16,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ projects }: ProjectCardProps) => {
   return (
-    <div>
+    <div className="grid gap-6 sm:grid-cols-[repeat(auto-fit,minmax(350px,1fr))]">
       {projects.map((project) => (
         <Card
           key={project.title}
@@ -26,8 +26,8 @@ const ProjectCard = ({ projects }: ProjectCardProps) => {
             <CardTitle className="font-light">{project.title}</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="group flex flex-col items-center justify-center gap-5 lg:justify-start">
-              <p className="text-sm ">{project.description}</p>
+            <div className="md2:h-[480px] flex h-auto flex-col items-center justify-between space-y-4 lg:space-y-2">
+              <p className="text-sm">{project.description}</p>
 
               <div className="max-w-[300px] space-x-1">
                 {project.technologies.map((tech) => (

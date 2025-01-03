@@ -12,6 +12,7 @@ const config: Config = {
       screens: {
         sm2: "355px", // Nome do breakpoint e largura mínima
         sm3: "450px",
+        md2: "820px",
       },
       colors: {
         background: "hsl(var(--background))",
