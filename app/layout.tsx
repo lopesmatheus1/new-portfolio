@@ -3,11 +3,16 @@ import "./globals.css";
 import Header from "./_components/header";
 import { ThemeProvider } from "./_components/theme-provider";
 import Footer from "./_components/footer";
+import Contact from "./_components/contact";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "400", "300", "600", "700", "900", "800", "500"],
 });
+
+export const metadata = {
+  title: "Portfólio  Matheus Marendino",
+};
 
 export default function RootLayout({
   children,
@@ -25,6 +30,7 @@ export default function RootLayout({
         >
           <Header />
           {children}
+          <Contact />
           <Footer />
         </ThemeProvider>
       </body>
