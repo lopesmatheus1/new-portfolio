@@ -5,7 +5,6 @@ import {
   CardContent,
 } from "@/app/_components/ui/card";
 import { Technologies } from "@/app/_types/page-home-projects";
-import Image from "next/image";
 
 interface TechCardProps {
   technologies: Technologies[];
@@ -17,7 +16,7 @@ const TechCard = ({ technologies }: TechCardProps) => {
     .filter((category, index, self) => self.indexOf(category) === index);
 
   return (
-    <div className="grid gap-6 sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
+    <div className="grid gap-6 sm:grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
       {categories.map((category) => (
         <Card
           key={category.category}
@@ -32,8 +31,8 @@ const TechCard = ({ technologies }: TechCardProps) => {
             .filter((tech) => tech.category === category)
             .map((tech) => (
               <CardContent key={tech.name}>
-                <div className="flex items-center justify-center gap-5 lg:justify-start">
-                  <div className="rounded-full bg-ring/10 p-1">
+                <div className="flex items-center justify-start gap-5 lg:justify-start">
+                  <div className="rounded-full bg-ring/10 p-1.5">
                     <img
                       className="text-primary"
                       src={tech.iconSVG.url}
