@@ -4,6 +4,7 @@ import Header from "./_components/header";
 import { ThemeProvider } from "./_components/theme-provider";
 import Footer from "./_components/footer";
 import Contact from "./_components/contact";
+import { Toaster } from "./_components/ui/toaster";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster />
           <Header />
           {children}
           <Contact />
