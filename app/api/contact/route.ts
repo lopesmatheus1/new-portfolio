@@ -8,7 +8,6 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { email, fullName, message } = contactFormSchema.parse(body);
-
     const messageData = {
       embeds: [
         {
@@ -33,10 +32,9 @@ export async function POST(request: Request) {
         },
       ],
     };
-
     await axios.post(WEBHOOK_URL, messageData);
+    return NextResponse.json({ message: "Mensagem enviada com sucesso!" });
   } catch (error) {
-    console.log(error);
     return NextResponse.error();
   }
 }

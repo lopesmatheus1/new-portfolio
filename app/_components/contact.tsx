@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-
+import { useToast } from "../_hooks/use-toast";
 import {
   Form,
   FormControl,
@@ -14,8 +14,7 @@ import {
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
-import { contactFormSchema, ContactSchema } from "../_api/contact/schema";
-import { useToast } from "../_hooks/use-toast";
+import { contactFormSchema, ContactSchema } from "../api/contact/schema";
 import axios from "axios";
 
 const Contact = () => {
@@ -31,15 +30,14 @@ const Contact = () => {
   });
 
   const onSubmit = async (values: ContactSchema) => {
-   //TODO FIX
-   
-    // try {
-    //   await axios.post("/_api/contact", values);
-    //   form.reset();
-    // } catch (error) {
-    //   console.log(error);
-    //   toast({ variant: "destructive", title: "Ops! Alguma coisa deu errado" });
-    // }
+    try {
+      await axios.post("/api/contact", values); // Rota de API
+      form.reset();
+      toast({ title: "Mensagem enviada com sucesso!" });
+    } catch (error) {
+      console.log(error);
+      toast({ variant: "destructive", title: "Ops! Alguma coisa deu errado" });
+    }
   };
 
   return (
@@ -98,7 +96,12 @@ const Contact = () => {
                 )}
               />
 
-              <Button className="w-full" variant={"outline"} type="submit">
+              <Button
+                className="w-full"
+                variant={"outline"}
+                type="submit"
+                disabled={form.formState.isSubmitting}
+              >
                 Enviar
               </Button>
             </form>
