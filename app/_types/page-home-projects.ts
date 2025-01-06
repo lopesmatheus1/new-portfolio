@@ -10,6 +10,16 @@ export type Technologies = {
   category: Category;
 };
 
+export type HeroesContents = {
+  resume: {
+    url: string;
+  };
+  image: {
+    url: string;
+  };
+  description: string;
+};
+
 export type Projects = {
   deployLink: string;
   description: string;
@@ -27,4 +37,8 @@ export type TechnologiesResponse = {
 
 export type ProjectResponse = {
   projects: Projects[];
+};
+
+export type HeroResponse = {
+  heroes: HeroesContents[];
 };
