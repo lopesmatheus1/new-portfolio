@@ -32,7 +32,7 @@ const links = [
 
 const Sidebar = () => {
   return (
-    <div className="fixed left-0 top-1/4 mr-4 hidden flex-col rounded-t-lg sm:flex">
+    <div className="absolute left-0 top-1/4 z-0 mr-4 hidden flex-col rounded-t-lg sm:flex">
       {links.map((link) => (
         <a
           key={link.label}

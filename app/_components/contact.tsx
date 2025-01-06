@@ -42,7 +42,7 @@ const Contact = () => {
 
   return (
     <section className="container mt-10 flex h-[500px] flex-col">
-      <div>
+      <div className="flex items-center justify-center">
         <h2 className="text-center text-3xl font-extralight lg:text-left lg:text-4xl">
           Entre em contato comigo
         </h2>
