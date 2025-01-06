@@ -1,4 +1,3 @@
-import { Button } from "../_components/ui/button";
 import { ExperiencesResponse } from "../_types/page-experience";
 import { fetchHygraphQuery } from "../_utils/fetch-hygraph-query";
 import ExperienceCard from "./_components/experience-card";

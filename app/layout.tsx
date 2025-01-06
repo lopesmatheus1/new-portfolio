@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="transition-all">
+    <html lang="en">
       <body className={` ${poppins.className} antialiased`}>
         <ThemeProvider
           attribute="class"

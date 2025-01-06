@@ -43,9 +43,9 @@ const Hero = ({ hero }: HeroProps) => {
                 <a
                   rel="noopener noreferrer"
                   href={heroContent.resume.url}
-                  download
+                  target="_blank"
                 >
-                  Baixar currículo
+                  Ver Currículo
                 </a>
               </Button>
               <Button variant="outline" asChild>

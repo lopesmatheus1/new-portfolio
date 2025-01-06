@@ -18,6 +18,12 @@ const TechCard = ({ technologies }: TechCardProps) => {
     .filter((category, index, self) => self.indexOf(category) === index)
     .sort();
 
+  const formatTitle = (title: string) => {
+    if (title === "backEnd") return "Back-end";
+    if (title === "frontEnd") return "Front-end";
+    if (title === "outros") return "Outros";
+    if (title === "linguagens") return "Linguagens";
+  };
   return (
     <div className="grid gap-6 sm:grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
       {categories.map((category, i) => (
@@ -27,7 +33,7 @@ const TechCard = ({ technologies }: TechCardProps) => {
         >
           <CardHeader>
             <CardTitle className="text-xl font-light">
-              {String(category)}
+              {formatTitle(String(category))}
             </CardTitle>
           </CardHeader>
           {technologies

@@ -20,7 +20,15 @@ const ExperienceTitle = ({ children }: TitleProps) => {
     >
       {children}
 
-      <Button variant="outline">Download CV</Button>
+      <Button variant="outline" asChild>
+        <a
+          rel="noopener noreferrer"
+          href="/docs/CurrículoMatheusLopes.pdf"
+          download
+        >
+          Baixar currículo
+        </a>
+      </Button>
     </motion.div>
   );
 };

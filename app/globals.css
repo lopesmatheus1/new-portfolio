@@ -66,6 +66,9 @@
     @apply bg-background text-foreground;
   }
 
+  html {
+    @apply transition-all;
+  }
   p {
     @apply text-foreground;
   }

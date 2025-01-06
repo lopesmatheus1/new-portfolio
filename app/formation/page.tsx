@@ -21,7 +21,6 @@ const getFormationPageData = async (): Promise<FormationResponse> => {
 
 const Formation = async () => {
   const { formations } = await getFormationPageData();
-  console.log(formations);
 
   return (
     <section className="container">
