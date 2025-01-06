@@ -2,6 +2,7 @@ import { Button } from "../_components/ui/button";
 import { ExperiencesResponse } from "../_types/page-experience";
 import { fetchHygraphQuery } from "../_utils/fetch-hygraph-query";
 import ExperienceCard from "./_components/experience-card";
+import ExperienceTitle from "./_components/experience-titles";
 
 const getExperiencePageData = async (): Promise<ExperiencesResponse> => {
   const getExperiencesQuery = `query getExperiences {
@@ -27,17 +28,15 @@ const Experience = async () => {
     <section className="container">
       <div className="flex min-h-[320px] w-full flex-col items-center justify-center gap-10 sm:h-[350px]">
         <div className="max-w-[312px] sm:max-w-[500px]">
-          <h2 className="text-xl font-extralight sm:text-2xl">
-            &lt;Aqui apresento um pouco da minha experiência profissional
-            durante minha caminhada como
-            <span className="font-light text-primary">
-              {" "}
-              desenvolvedor.
-            </span>{" "}
-            /&gt;
-          </h2>
+          <ExperienceTitle>
+            <p>
+              &lt;Aqui apresento um pouco da minha experiência profissional
+              durante minha caminhada como
+              <span className="font-light text-primary"> desenvolvedor. </span>
+              /&gt;
+            </p>
+          </ExperienceTitle>
         </div>
-        <Button variant="outline">Download CV</Button>
       </div>
 
       <div>

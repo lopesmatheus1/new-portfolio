@@ -24,8 +24,8 @@ const FormationCard = ({ formations }: FormationCardProps) => {
           key={i + formation.formationTitle}
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
           transition={{ duration: 0.3, delay: i * 0.4 }}
+          viewport={{ once: true }}
           className="w-full"
         >
           <Card className="w-full bg-transparent">
