@@ -5,7 +5,10 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="mt-8 flex w-full items-center text-center md:mt-0 lg:h-[650px] lg:text-left">
+    <section
+      id="hero-section"
+      className="z-50 mt-8 flex w-full items-center text-center md:mt-0 lg:h-[650px] lg:text-left"
+    >
       <div className="container flex flex-col-reverse items-center justify-between lg:flex-row">
         <div className="max-w-[310px] space-y-5 md:max-w-[500px]">
           <h1 className="text-3xl font-extralight sm:text-5xl">
@@ -22,7 +25,7 @@ const Hero = () => {
             various departments, to define new features and spearheading the
             development of new apps.
           </p>
-          <div className="flex items-center justify-center gap-8 lg:justify-start">
+          <div className="flex flex-col items-center justify-center gap-4 sm2:flex-row lg:justify-start">
             <Button variant="outline" asChild>
               <a
                 rel="noopener noreferrer"
