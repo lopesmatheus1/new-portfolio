@@ -1,6 +1,7 @@
 import { fetchHygraphQuery } from "@/app/_utils/fetch-hygraph-query";
 import TechCard from "./tech-card";
 import { TechnologiesResponse } from "@/app/_types/page-home-projects";
+import HomeTitle from "@/app/_components/home-titles";
 
 const getTechnologiesQuery = async (): Promise<TechnologiesResponse> => {
   const query = `query MyQuery {
@@ -22,11 +23,12 @@ const Techs = async () => {
   return (
     <section className="container mb-10 lg:min-h-[400px]">
       <div className="mt-24 space-y-20 text-center lg:mt-0 lg:text-left">
-        <h2 className="text-4xl font-extralight lg:text-5xl">
+        <HomeTitle variant={"normal"}>
+          {" "}
           Estas são as <br />
           tecnologias com as quais tenho
           <br /> trabalhado
-        </h2>
+        </HomeTitle>
 
         <div>
           <TechCard technologies={technologies} />

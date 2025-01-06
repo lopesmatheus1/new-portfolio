@@ -1,3 +1,5 @@
+"use client";
+import TechBadge from "@/app/_components/tech-badge";
 import {
   Card,
   CardHeader,
@@ -29,20 +31,17 @@ const TechCard = ({ technologies }: TechCardProps) => {
           </CardHeader>
           {technologies
             .filter((tech) => tech.category === category)
-            .map((tech) => (
+            .map((tech, i) => (
               <CardContent key={tech.name}>
-                <div className="flex items-center justify-start gap-5 lg:justify-start">
-                  <div className="rounded-full bg-ring/10 p-1.5">
-                    <img
-                      className="text-primary"
-                      src={tech.iconSVG.url}
-                      alt={""}
-                      width={25}
-                      height={25}
-                    />
-                  </div>
-                  <p className="text-lg font-light">{tech.name}</p>{" "}
-                </div>
+                <TechBadge
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  transition={{ duration: 0.2, delay: i * 0.2 }}
+                  key={`tech-name:${tech.name}`}
+                  link={tech.iconSVG.url}
+                  name={tech.name}
+                />
               </CardContent>
             ))}
         </Card>

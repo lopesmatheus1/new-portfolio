@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import {
   AiOutlineLinkedin,
   AiOutlineGithub,
@@ -32,9 +35,18 @@ const links = [
 
 const Sidebar = () => {
   return (
-    <div className="absolute left-0 top-1/4 z-0 mr-4 hidden flex-col rounded-t-lg sm:flex">
-      {links.map((link) => (
-        <a
+    <motion.div
+      initial={{ left: -100 }}
+      animate={{ left: 0 }}
+      transition={{ duration: 0.5 }}
+      className="absolute left-0 top-1/4 z-0 mr-4 hidden flex-col rounded-t-lg sm:flex"
+    >
+      {links.map((link, i) => (
+        <motion.a
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0 }}
+          transition={{ duration: 0.2, delay: i * 0.1 }}
           key={link.label}
           href={link.href}
           target="_blank"
@@ -53,9 +65,9 @@ const Sidebar = () => {
               {link.label}
             </span>
           </div>
-        </a>
+        </motion.a>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

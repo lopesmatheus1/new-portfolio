@@ -3,6 +3,7 @@
 import NavItem from "./nav-item";
 import HeaderTheme from "./header-theme";
 import { BsGithub, BsLinkedin, BsWhatsapp } from "react-icons/bs";
+import { motion } from "motion/react";
 
 import NavLink from "./nav-link";
 
@@ -28,7 +29,12 @@ const Header = () => {
   ];
 
   return (
-    <div className="relative top-3 z-50 flex w-full items-center justify-center sm3:h-32 sm:top-0">
+    <motion.header
+      initial={{ top: -120 }}
+      animate={{ top: 0 }}
+      transition={{ duration: 0.5 }}
+      className="relative top-3 z-50 flex w-full items-center justify-center sm3:h-32 sm:top-0"
+    >
       <div className="flex flex-col items-center justify-center gap-2 rounded-lg bg-secondary p-4 sm:flex-row lg:gap-4">
         <nav className="flex flex-col gap-2 text-sm sm2:flex-row sm3:text-base sm:gap-3">
           {NAV_ITEMS.map((navItem) => (
@@ -44,7 +50,7 @@ const Header = () => {
           <HeaderTheme />
         </div>
       </div>
-    </div>
+    </motion.header>
   );
 };
 

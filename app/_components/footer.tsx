@@ -1,8 +1,10 @@
+"use client";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { BiLogoGmail } from "react-icons/bi";
 import { BsLinkedin, BsGithub, BsWhatsapp } from "react-icons/bs";
 import NavLink from "./nav-link";
+import { motion } from "motion/react";
 
 const Footer = () => {
   const NAV_LINKS = [
@@ -22,7 +24,13 @@ const Footer = () => {
 
   return (
     <section className="container mt-10">
-      <div className="flex min-h-[250px] flex-col justify-evenly">
+      <motion.footer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        className="flex min-h-[250px] flex-col justify-evenly"
+      >
         {/* CIMA */}
         <div className="flex w-full flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
           <h2 className="text-2xl font-extralight lg:text-4xl">
@@ -54,7 +62,7 @@ const Footer = () => {
             ))}
           </div>
         </div>
-      </div>
+      </motion.footer>
     </section>
   );
 };

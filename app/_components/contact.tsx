@@ -16,6 +16,8 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { contactFormSchema, ContactSchema } from "../api/contact/schema";
 import axios from "axios";
+import HomeTitle from "./home-titles";
+import { motion } from "motion/react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -43,12 +45,16 @@ const Contact = () => {
   return (
     <section className="container mt-10 flex h-[500px] flex-col">
       <div className="flex items-center justify-center">
-        <h2 className="text-center text-3xl font-extralight lg:text-left lg:text-4xl">
-          Entre em contato comigo
-        </h2>
+        <HomeTitle variant="small">Entre em contato comigo</HomeTitle>
       </div>
       <div className="flex h-full flex-col items-center justify-center">
-        <div className="w-full max-w-[450px]">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 100 }}
+          transition={{ duration: 1 }}
+          className="w-full max-w-[450px]"
+        >
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
               <FormField
@@ -106,7 +112,7 @@ const Contact = () => {
               </Button>
             </form>
           </Form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

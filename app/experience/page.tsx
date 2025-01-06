@@ -28,10 +28,11 @@ const Experience = async () => {
       <div className="flex min-h-[320px] w-full flex-col items-center justify-center gap-10 sm:h-[350px]">
         <div className="max-w-[312px] sm:max-w-[500px]">
           <h2 className="text-xl font-extralight sm:text-2xl">
-            &lt;Here, you can know me a little more and see my whole experience
-            as a{" "}
+            &lt;Aqui apresento um pouco da minha experiência profissional
+            durante minha caminhada como
             <span className="font-light text-primary">
-              Front-End Software Engineer.
+              {" "}
+              desenvolvedor.
             </span>{" "}
             /&gt;
           </h2>
