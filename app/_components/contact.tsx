@@ -16,7 +16,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { contactFormSchema, ContactSchema } from "../api/contact/schema";
 import axios from "axios";
-import HomeTitle from "./home-titles";
+import HomeTitle from "../(home)/_components/home-titles";
 import { motion } from "motion/react";
 
 const Contact = () => {
