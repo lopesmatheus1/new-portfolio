@@ -13,23 +13,27 @@ const links = [
   {
     label: "LinkedIn",
     icon: <AiOutlineLinkedin size={25} />,
-    href: "https://www.linkedin.com",
+    href: "https://www.linkedin.com/in/matheus-marendino-23b039246/",
   },
   {
     label: "GitHub",
     icon: <AiOutlineGithub size={25} />,
-    href: "https://www.github.com",
+    href: "https://github.com/lopesmatheus1",
   },
   {
     label: "E-mail",
     icon: <AiOutlineMail />,
-    href: "mailto:example@email.com",
+    href: "mailto:matheusmarendino022@gmail.com",
   },
-  { label: "Contato", icon: <AiOutlineUser size={25} />, href: "#" },
+  {
+    label: "Contato",
+    icon: <AiOutlineUser size={25} />,
+    href: "https://wa.link/qhiq4k",
+  },
   {
     label: "Instagram",
     icon: <AiOutlineInstagram size={25} />,
-    href: "https://www.instagram.com",
+    href: "https://www.instagram.com/matheusmarendino/",
   },
 ];
 
@@ -39,7 +43,7 @@ const Sidebar = () => {
       initial={{ left: -100 }}
       animate={{ left: 0 }}
       transition={{ duration: 0.5 }}
-      className="absolute left-0 top-1/4 z-0 mr-4 hidden flex-col rounded-t-lg sm:flex"
+      className="absolute left-0 top-1/4 z-0 mr-4 hidden flex-col rounded-t-lg lg:flex"
     >
       {links.map((link, i) => (
         <motion.a

@@ -39,6 +39,7 @@ const Footer = () => {
 
           <Button variant="outline" asChild>
             <Link
+              target="_blank"
               className="flex items-center justify-center gap-2 text-xs font-light"
               href="mailto:matheusmarendino022@gmail.com"
             >

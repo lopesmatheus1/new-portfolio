@@ -18,7 +18,7 @@ const TechBadge = ({ link, name, ...props }: TechBadgeProps) => {
         <img
           className="text-primary"
           src={link}
-          alt={""}
+          alt={`Icone da tecnologia ${name}`}
           width={25}
           height={25}
         />
