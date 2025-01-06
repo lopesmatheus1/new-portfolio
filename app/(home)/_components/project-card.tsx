@@ -21,6 +21,7 @@ const ProjectCard = ({ projects }: ProjectCardProps) => {
     <div className="grid gap-6 sm:grid-cols-[repeat(auto-fit,minmax(350px,1fr))]">
       {projects.map((project, i) => (
         <motion.div
+          key={i + project.title}
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
