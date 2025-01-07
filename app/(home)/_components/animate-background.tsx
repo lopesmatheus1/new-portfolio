@@ -9,7 +9,7 @@ const AnimateBackground = () => {
       className="relative -top-32 h-screen w-full overflow-hidden px-4"
     >
       <Sidebar />
-      <div className="absolute left-0 top-0 z-0 w-full">
+      <div className="absolute left-0 top-0 z-0 w-full h-full">
         <ParticlesBackground />
       </div>
       <div className="flex h-full items-center justify-center">

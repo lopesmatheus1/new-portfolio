@@ -25,6 +25,8 @@ const ParticlesBackground = () => {
       },
       style: {
         position: "relative",
+        height: "100vh",
+
       },
       fpsLimit: 75,
       interactivity: {
@@ -76,9 +78,9 @@ const ParticlesBackground = () => {
           density: {
             enable: true,
             width: 1100,
-            height: 1100,
+            height: 1000,
           },
-          value: 20,
+          value: 30,
         },
         opacity: {
           value: 0.5,
