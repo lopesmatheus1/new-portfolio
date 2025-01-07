@@ -1,12 +1,17 @@
+"use client";
+import ParticlesBackground from "@/app/_components/particles";
 import Sidebar from "@/app/_components/sidebar";
 
 const AnimateBackground = () => {
   return (
     <section
       id="animate-background"
-      className="relative -top-32 h-screen w-screen px-4"
+      className="relative -top-32 h-screen w-full overflow-hidden px-4"
     >
       <Sidebar />
+      <div className="absolute left-0 top-0 z-0 w-full">
+        <ParticlesBackground />
+      </div>
       <div className="flex h-full items-center justify-center">
         <h1 className="text-center text-4xl">
           Olá, meu nome é<br />

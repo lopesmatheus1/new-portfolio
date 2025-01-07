@@ -7,7 +7,7 @@ export const fetchHygraphQuery = async <T>(query: string): Promise<T> => {
       Authorization: `Bearer ${process.env.HYGRAPH_TOKEN}`,
     },
     next: {
-      revalidate: 60 * 60 * 24,
+      revalidate: 10,
     },
     body: JSON.stringify({
       query,

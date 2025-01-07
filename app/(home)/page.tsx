@@ -22,6 +22,8 @@ const getHeroData = async (): Promise<HeroResponse> => {
   return fetchHygraphQuery(query);
 };
 
+export const revalidate = 10;
+
 const Home = async () => {
   const { heroes } = await getHeroData();
 

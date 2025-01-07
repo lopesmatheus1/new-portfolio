@@ -43,7 +43,7 @@ const Sidebar = () => {
       initial={{ left: -100 }}
       animate={{ left: 0 }}
       transition={{ duration: 0.5 }}
-      className="absolute left-0 top-1/4 z-0 mr-4 hidden flex-col rounded-t-lg lg:flex"
+      className="absolute left-0 top-1/4 z-50 mr-4 hidden flex-col rounded-t-lg lg:flex"
     >
       {links.map((link, i) => (
         <motion.a

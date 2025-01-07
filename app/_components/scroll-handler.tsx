@@ -1,25 +1,31 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { scroller } from "react-scroll"; // Importa o scroller do react-scroll
+import { scroller } from "react-scroll";
 
 export default function ScrollHandler() {
   const [hasScrolled, setHasScrolled] = useState(false); // Controle se o redirecionamento já ocorreu
-  const [isScrollingDown, setIsScrollingDown] = useState(true); // Verifica se o usuário está rolando para baixo
+  const [isAnimatingScroll, setIsAnimatingScroll] = useState(false); // Bloqueia múltiplos eventos de rolagem
 
   useEffect(() => {
-    let lastScrollY = window.scrollY; // Posição do scroll no último render
+    let lastScrollY = window.scrollY; // Posição inicial do scroll
+
+    const disableScroll = () => {
+      document.body.style.overflow = "hidden"; // Bloqueia o scroll
+    };
+
+    const enableScroll = () => {
+      document.body.style.overflow = ""; // Restaura o scroll
+    };
 
     const handleScroll = () => {
+      if (isAnimatingScroll || hasScrolled) return; // Ignora se já está rolando ou se já rolou
+
       // Detecta se o usuário está rolando para baixo
-      if (window.scrollY > lastScrollY) {
-        setIsScrollingDown(true); // O usuário rolou para baixo
-      } else {
-        setIsScrollingDown(false); // O usuário rolou para cima
-      }
+      const isScrollingDown = window.scrollY > lastScrollY;
       lastScrollY = window.scrollY; // Atualiza a posição do scroll
 
-      if (hasScrolled || !isScrollingDown) return; // Se o redirecionamento já ocorreu ou o usuário rolou para cima, não faz nada
+      if (!isScrollingDown) return; // Ignora eventos de rolagem para cima
 
       // Obtém a referência da seção AnimateBackground
       const animateSection = document.querySelector("#animate-background");
@@ -33,25 +39,34 @@ export default function ScrollHandler() {
           rect.bottom >= 0 &&
           window.scrollY > 50
         ) {
+          setIsAnimatingScroll(true); // Marca a animação como ativa
+          disableScroll(); // Desativa o scroll durante a animação
+
           // Rola suavemente para a seção Techs
           scroller.scrollTo("hero-section", {
             duration: 1000, // Tempo de rolagem suave (em ms)
             delay: 0,
             smooth: "easeInOutQuart", // Tipo de animação de rolagem
+            onComplete: () => {
+              // Após a animação, marca que o redirecionamento ocorreu
+              setHasScrolled(true);
+              setIsAnimatingScroll(false); // Libera a animação
+              enableScroll(); // Restaura o scroll
+            },
           });
-
-          // Marca que o redirecionamento já aconteceu
-          setHasScrolled(true);
         }
       }
     };
 
+    // Adiciona o evento de scroll
     window.addEventListener("scroll", handleScroll);
 
     return () => {
+      // Remove o evento de scroll
       window.removeEventListener("scroll", handleScroll);
+      enableScroll(); // Garante que o scroll seja habilitado ao desmontar
     };
-  }, [hasScrolled, isScrollingDown]); // Dependência do estado isScrollingDown
+  }, [hasScrolled, isAnimatingScroll]);
 
   return null;
 }
