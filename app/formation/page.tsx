@@ -19,6 +19,8 @@ const getFormationPageData = async (): Promise<FormationResponse> => {
   return fetchHygraphQuery(getFormationQuery);
 };
 
+export const revalidate = 60 * 24 * 24;
+
 const Formation = async () => {
   const { formations } = await getFormationPageData();
 

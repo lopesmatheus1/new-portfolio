@@ -19,6 +19,7 @@ const getExperiencePageData = async (): Promise<ExperiencesResponse> => {
 
   return fetchHygraphQuery(getExperiencesQuery);
 };
+export const revalidate = 60 * 24 * 24;
 
 const Experience = async () => {
   const { experiences }: ExperiencesResponse = await getExperiencePageData();
