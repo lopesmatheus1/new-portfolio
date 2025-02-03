@@ -22,7 +22,7 @@ const getHeroData = async (): Promise<HeroResponse> => {
   return fetchHygraphQuery(query);
 };
 
-export const revalidate = 60 * 24 * 24;
+export const revalidate = (60 * 24 * 24)/2;
 
 const Home = async () => {
   const { heroes } = await getHeroData();
