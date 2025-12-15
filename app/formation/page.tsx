@@ -4,22 +4,21 @@ import { fetchHygraphQuery } from "../_utils/fetch-hygraph-query";
 
 const getFormationPageData = async (): Promise<FormationResponse> => {
   const getFormationQuery = `query getFormation {
-    formations {
-      certificateDescription
-      endDate
-      formationTitle
-      startDate
-      pdfCertificate {
-        url
-        fileName
-      }
+  formations (orderBy:endDate_DESC) {
+    certificateDescription
+    endDate
+    formationTitle
+    startDate
+    pdfCertificate {
+      url
+      fileName
     }
-  }`;
+  }
+}`;
 
   return fetchHygraphQuery(getFormationQuery);
 };
 
-export const revalidate = 60 * 24 * 24;
 
 const Formation = async () => {
   const { formations } = await getFormationPageData();

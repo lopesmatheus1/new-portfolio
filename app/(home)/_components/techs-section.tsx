@@ -3,10 +3,9 @@ import TechCard from "./tech-card";
 import { TechnologiesResponse } from "@/app/_types/page-home-projects";
 import HomeTitle from "@/app/(home)/_components/home-titles";
 
-
 const getTechnologiesQuery = async (): Promise<TechnologiesResponse> => {
   const query = `query MyQuery {
-  technologies(first:50) {
+  technologies(first:50, orderBy: updatedAt_DESC) {
     category
     name
     iconSVG {

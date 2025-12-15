@@ -5,7 +5,7 @@ import ExperienceTitle from "./_components/experience-titles";
 
 const getExperiencePageData = async (): Promise<ExperiencesResponse> => {
   const getExperiencesQuery = `query getExperiences {
-  experiences {
+  experiences (orderBy:endDate_DESC) {
     companyName
     contractType
     description
@@ -19,7 +19,6 @@ const getExperiencePageData = async (): Promise<ExperiencesResponse> => {
 
   return fetchHygraphQuery(getExperiencesQuery);
 };
-export const revalidate = 60 * 24 * 24;
 
 const Experience = async () => {
   const { experiences }: ExperiencesResponse = await getExperiencePageData();

@@ -30,11 +30,6 @@ const links = [
     icon: <AiOutlineUser size={25} />,
     href: "https://wa.link/qhiq4k",
   },
-  {
-    label: "Instagram",
-    icon: <AiOutlineInstagram size={25} />,
-    href: "https://www.instagram.com/matheusmarendino/",
-  },
 ];
 
 const Sidebar = () => {
@@ -59,7 +54,7 @@ const Sidebar = () => {
         >
           {/* Contêiner que cresce ao passar o mouse */}
           <div
-            className={` ${link.label === "LinkedIn" ? "rounded-t-sm" : ""} ${link.label === "Instagram" ? "rounded-b-sm" : ""} flex h-12 w-11 items-center gap-2 overflow-hidden bg-secondary px-2 py-2 transition-all duration-300 hover:rounded-r-lg hover:text-primary group-hover:w-40`}
+            className={` ${link.label === "LinkedIn" ? "rounded-t-sm" : ""} ${link.label === "Contato" ? "rounded-b-sm" : ""} flex h-12 w-11 items-center gap-2 overflow-hidden bg-secondary px-2 py-2 transition-all duration-300 hover:rounded-r-lg hover:text-primary group-hover:w-40`}
           >
             {/* Ícone */}
             <div className="text-2xl">{link.icon}</div>

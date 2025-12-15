@@ -18,13 +18,13 @@ type FormationCardProps = {
 
 const FormationCard = ({ formations }: FormationCardProps) => {
   return (
-    <div className="mt-12 flex h-full flex-col items-center justify-center gap-10 sm:mt-0">
+    <div className="mt-12 flex h-full flex-col items-center justify-center gap-5 sm:mt-0">
       {formations.map((formation, i) => (
         <motion.div
           key={i + formation.formationTitle}
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3, delay: i * 0.4 }}
+          transition={{ duration: 0.3, delay: i * 0.1 }}
           viewport={{ once: true }}
           className="w-full"
         >

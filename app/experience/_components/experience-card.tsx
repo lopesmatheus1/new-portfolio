@@ -17,10 +17,10 @@ const ExperienceCard = ({ experiences }: ExperienceCardProps) => {
           key={i + experience.title}
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3, delay: i * 0.4 }}
+          transition={{ duration: 0.3, delay: i * 0.1 }}
           viewport={{ once: true }}
         >
-          <Card className="w-full transition ease-in-out hover:bg-card/40">
+          <Card className="w-full bg-card/40 transition ease-in-out hover:bg-card/20">
             <CardContent className="pt-6">
               <div className="flex flex-col justify-between gap-10 lg:flex-row">
                 {/* PARTE DA ESQUERDA */}
@@ -35,11 +35,7 @@ const ExperienceCard = ({ experiences }: ExperienceCardProps) => {
                       className="fill-current text-primary/50 transition ease-in-out hover:text-primary"
                       size={10}
                     />
-                    <p>
-                      {experience.title === "Diretor comercial"
-                        ? `${formateDate(experience.endDate)}`
-                        : "Presente"}
-                    </p>
+                    <p>{`${formateDate(experience.endDate)}`}</p>
                   </div>
                   <p className="text-sm">{experience.location}</p>
                 </div>
