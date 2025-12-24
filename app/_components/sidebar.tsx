@@ -6,7 +6,6 @@ import {
   AiOutlineGithub,
   AiOutlineMail,
   AiOutlineUser,
-  AiOutlineInstagram,
 } from "react-icons/ai";
 
 const links = [
