@@ -67,7 +67,7 @@ const Hero = ({ hero }: HeroProps) => {
               alt={"Imagem programador"}
               width={400}
               height={400}
-              unoptimized
+              priority
             />
           </motion.div>
         </div>
